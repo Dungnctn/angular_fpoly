@@ -15,6 +15,9 @@ import { SignupComponent } from './page/client/auth/signup/signup.component';
 import { ListProductComponent } from './page/client/list-product/list-product.component';
 import { HomePageComponent } from './page/client/home-page/home-page.component';
 import { DetailProductComponent } from './page/client/detail-product/detail-product.component';
+import { ProductComponent } from './page/admin/product/product.component';
+import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
+import { AddProductComponent } from './page/admin/add-product/add-product.component';
 // import
 
 @NgModule({
@@ -30,6 +33,9 @@ import { DetailProductComponent } from './page/client/detail-product/detail-prod
     ListProductComponent,
     HomePageComponent,
     DetailProductComponent,
+    ProductComponent,
+    DashboardComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,

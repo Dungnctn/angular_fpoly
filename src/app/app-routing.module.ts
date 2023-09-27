@@ -7,6 +7,9 @@ import { SigninComponent } from './page/client/auth/signin/signin.component';
 import { SignupComponent } from './page/client/auth/signup/signup.component';
 import { HomePageComponent } from './page/client/home-page/home-page.component';
 import { DetailProductComponent } from './page/client/detail-product/detail-product.component';
+import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
+import { ProductComponent } from './page/admin/product/product.component';
+import { AddProductComponent } from './page/admin/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -34,7 +37,20 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        component: DashboardComponent,
+      },
+      {
+        path: 'products',
+        component: ProductComponent,
+      },
+      {
+        path: 'add-product',
+        component: AddProductComponent,
+      },
+    ],
   },
   {
     path: '404',

@@ -15,4 +15,9 @@ export class AdminComponent {
       this.router.navigate(['/']);
     }
   }
+
+  onSignOut() {
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }

@@ -24,10 +24,9 @@ export class SigninComponent {
     this.authService.signIn(this.authForm.value).subscribe({
       next: (data: any) => {
         localStorage.setItem('user', JSON.stringify(data));
-        if (data.user.role === 1) {
+        if (data.user.role === 0) {
           this.router.navigate(['/admin']);
         }
-        console.log('data', data);
       },
       error: (err) => console.log('err', err),
     });

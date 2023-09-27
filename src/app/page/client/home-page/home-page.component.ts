@@ -9,11 +9,13 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomePageComponent {
   products: any[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {
+    this.getAll();
+  }
 
   getAll() {
     this.productService.getAll().subscribe({
-      next: (data) => (this.products = data),
+      next: (data: any) => (this.products = data),
       error: (err) => console.log('productService', err),
     });
   }

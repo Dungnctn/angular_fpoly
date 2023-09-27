@@ -8,7 +8,10 @@ import { API_URL } from '../help';
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
-  getAll(): Observable<any> {
-    return this.http.get<any>(`${API_URL}/products`);
+  getAll() {
+    return this.http.get(`${API_URL}/products`);
+  }
+  getDetail(id: number) {
+    return this.http.get(`${API_URL}/products/${id}`);
   }
 }

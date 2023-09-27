@@ -11,4 +11,8 @@ export class AuthService {
   signIn(value: any) {
     return this.http.post(`${API_URL}/signin`, value);
   }
+
+  signUp(value: any) {
+    return this.http.post(`${API_URL}/signup`, value);
+  }
 }

@@ -6,6 +6,7 @@ import { ClientComponent } from './layout/client/client.component';
 import { SigninComponent } from './page/client/auth/signin/signin.component';
 import { SignupComponent } from './page/client/auth/signup/signup.component';
 import { HomePageComponent } from './page/client/home-page/home-page.component';
+import { DetailProductComponent } from './page/client/detail-product/detail-product.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'signup',
         component: SignupComponent,
+      },
+      {
+        path: 'products/:id',
+        component: DetailProductComponent,
       },
     ],
   },

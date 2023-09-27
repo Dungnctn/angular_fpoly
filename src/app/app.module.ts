@@ -14,6 +14,7 @@ import { SigninComponent } from './page/client/auth/signin/signin.component';
 import { SignupComponent } from './page/client/auth/signup/signup.component';
 import { ListProductComponent } from './page/client/list-product/list-product.component';
 import { HomePageComponent } from './page/client/home-page/home-page.component';
+import { DetailProductComponent } from './page/client/detail-product/detail-product.component';
 // import
 
 @NgModule({
@@ -28,6 +29,7 @@ import { HomePageComponent } from './page/client/home-page/home-page.component';
     SignupComponent,
     ListProductComponent,
     HomePageComponent,
+    DetailProductComponent,
   ],
   imports: [
     BrowserModule,

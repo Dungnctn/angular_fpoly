@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { API_URL } from '../help';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class AuthService {
   constructor(private http: HttpClient) {}
-  getAll(): Observable<any> {
-    return this.http.get<any>(`${API_URL}/products`);
+
+  signIn(value: any) {
+    return this.http.post(`${API_URL}/signin`, value);
   }
 }

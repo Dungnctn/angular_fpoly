@@ -10,6 +10,7 @@ import { DetailProductComponent } from './page/client/detail-product/detail-prod
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductComponent } from './page/admin/product/product.component';
 import { AddProductComponent } from './page/admin/add-product/add-product.component';
+import { EditProductComponent } from './page/admin/edit-product/edit-product.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path: 'add-product',
         component: AddProductComponent,
+      },
+      {
+        path: 'edit-product/:id',
+        component: EditProductComponent,
       },
     ],
   },

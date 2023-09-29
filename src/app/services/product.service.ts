@@ -18,4 +18,12 @@ export class ProductService {
   deleteProduct(id: number) {
     return this.http.delete(`${API_URL}/products/${id}`);
   }
+
+  addProduct(value: any) {
+    return this.http.post(`${API_URL}/products`, value);
+  }
+
+  updateProduct(id: number, value: any) {
+    return this.http.put(`${API_URL}/products/${id}`, value);
+  }
 }

@@ -18,6 +18,7 @@ import { DetailProductComponent } from './page/client/detail-product/detail-prod
 import { ProductComponent } from './page/admin/product/product.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { AddProductComponent } from './page/admin/add-product/add-product.component';
+import { EditProductComponent } from './page/admin/edit-product/edit-product.component';
 // import
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AddProductComponent } from './page/admin/add-product/add-product.compon
     ProductComponent,
     DashboardComponent,
     AddProductComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,

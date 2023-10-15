@@ -31,6 +31,13 @@
             <label class="form-label" for="form3Example3">Name</label>
             <input type="text" id="form3Example3" formControlName="name" class="form-control form-control-lg"
               placeholder="Username" />
+            <div
+              *ngIf="signUpForm.get('name')?.hasError('required') &&
+              (signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty )"
+              class="text-danger"
+            >
+              Field Name required
+            </div>
           </div>
 
           <!-- Email input -->
@@ -38,6 +45,20 @@
             <label class="form-label" for="form3Example3">Email</label>
             <input type="email" id="form3Example3" formControlName="email" class="form-control form-control-lg"
               placeholder="Email" />
+            <div
+              *ngIf="signUpForm.get('email')?.hasError('required') &&
+              (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty)"
+              class="text-danger"
+            >
+              Field Email required
+            </div>
+            <div
+              *ngIf="signUpForm.get('email')?.hasError('email') &&
+              (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty)"
+              class="text-danger"
+            >
+              Field Email Invalidate
+            </div>
           </div>
 
           <!-- Password input -->
@@ -45,6 +66,26 @@
             <label class="form-label" for="form3Example4">Password</label>
             <input type="password" id="form3Example4" formControlName="password" class="form-control form-control-lg"
               placeholder="Enter password" />
+            <div
+              *ngIf="signUpForm.get('password')?.hasError('required') &&
+              (signUpForm.get('password')?.touched || signUpForm.get('password')?.dirty )"
+              class="text-danger"
+            >
+              Field Password Required
+            </div>
+          </div>
+
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Confirm Password</label>
+            <input type="password" id="form3Example4" formControlName="confirmPassword" class="form-control form-control-lg"
+              placeholder="Enter confirm password" />
+            <div
+              *ngIf="signUpForm?.hasError('passwordFail') &&
+              (signUpForm.get('confirmPassword')?.touched || signUpForm.get('confirmPassword')?.dirty )"
+              class="text-danger"
+            >
+              Password incorrect
+            </div>
           </div>
           <!-- <div class="form-outline mb-3">
             <input type="password" id="form3Example4" class="form-control form-control-lg"

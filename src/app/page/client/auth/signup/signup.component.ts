@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,11 +9,15 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
-  signUpForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
+  signUpForm = this.fb.group(
+    {
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
+    },
+    { validators: this.checkPass }
+  );
   errorMessage: string = '';
 
   constructor(
@@ -21,6 +25,13 @@ export class SignupComponent {
     private authService: AuthService,
     private router: Router
   ) {}
+
+  checkPass(form: FormGroup) {
+    const pw = form.get('password')?.value;
+    const confirmPw = form.get('confirmPassword')?.value;
+    if (pw === confirmPw) return null;
+    return { passwordFail: true };
+  }
 
   onHandleSubmit() {
     this.authService.signUp(this.signUpForm.value).subscribe({

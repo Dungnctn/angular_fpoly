@@ -3,20 +3,48 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="formProduct">
     <div>
       <label for="">Name</label>
-      <input type="text" formControlName="name" >
+      <input type="text" class="form-control" formControlName="name" >
+      <div
+        *ngIf="formProduct.get('name')?.hasError('required') &&
+        (formProduct.get('name')?.touched || formProduct.get('name')?.dirty )"
+        class="text-danger"
+      >
+        Field Name required
+      </div>
     </div>
     <div>
       <label for="">Image</label>
-      <input type="text" formControlName="img" >
+      <input type="text"   class="form-control" formControlName="img" >
+      <div
+        *ngIf="formProduct.get('img')?.hasError('required') &&
+        (formProduct.get('img')?.touched || formProduct.get('img')?.dirty )"
+        class="text-danger"
+      >
+        Field Image required
+      </div>
     </div>
     <div>
       <label for="">Price</label>
-      <input type="number" formControlName="price" >
+      <input type="number"  class="form-control" formControlName="price" >
+      <div
+        *ngIf="formProduct.get('price')?.hasError('required') &&
+        (formProduct.get('price')?.touched || formProduct.get('price')?.dirty )"
+        class="text-danger"
+      >
+        Field Price required
+      </div>
     </div>
     <div>
       <label for="">Desc</label>
-      <input type="text" formControlName="desc" >
+      <input type="text" class="form-control" formControlName="desc" >
+      <div
+        *ngIf="formProduct.get('desc')?.hasError('required') &&
+        (formProduct.get('desc')?.touched || formProduct.get('desc')?.dirty )"
+        class="text-danger"
+      >
+        Field Description required
+      </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!formProduct.valid">Submit</button>
+    <button class="btn btn-primary mt-2" type="submit" [disabled]="!formProduct.valid">Submit</button>
   </form>
 </div>

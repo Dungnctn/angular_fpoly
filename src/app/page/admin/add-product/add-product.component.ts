@@ -10,10 +10,10 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AddProductComponent {
   formProduct = this.fb.group({
-    name: ['', Validators.required],
-    img: ['', Validators.required],
-    price: [0, Validators.required],
-    desc: ['', Validators.required],
+    name: ['', [Validators.required]],
+    img: ['', [Validators.required]],
+    price: [0, [Validators.required, Validators.minLength(1)]],
+    desc: ['', [Validators.required]],
   });
 
   constructor(
